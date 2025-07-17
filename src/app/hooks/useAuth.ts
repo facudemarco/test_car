@@ -62,5 +62,20 @@ export default function useAuth() {
     }
   };
 
-  return {login, register};
+  const testSetCookiePost = async () => {
+    try {
+      const response = await axios.post(
+        "https://api-burgerli.iwebtecnology.com/test-set-cookie-post",
+        {},
+        {
+          withCredentials: true,
+        }
+      );
+      console.log("Respuesta testSetCookiePost:", response);
+    } catch (error) {
+      console.error("Error en testSetCookiePost:", error);
+    }
+  };
+
+  return {login, register, testSetCookiePost};
 }

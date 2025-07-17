@@ -4,7 +4,7 @@ import {useState} from "react";
 import useAuth from "../hooks/useAuth";
 
 export default function LoginPage() {
-  const {login} = useAuth();
+  const {login, testSetCookiePost} = useAuth();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -36,6 +36,13 @@ export default function LoginPage() {
       />
       <button className="cursor-pointer rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
         Login
+      </button>
+      <button
+        type="button"
+        className="cursor-pointer rounded bg-green-500 px-4 py-2 font-bold text-white hover:bg-green-700"
+        onClick={testSetCookiePost}
+      >
+        Test Cookie POST
       </button>
     </form>
   );
